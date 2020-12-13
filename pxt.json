@@ -9,7 +9,8 @@
     },
     "files": [
         "README.md",
-        "bitsFunction.ts"
+        "bitsFunction.ts",
+        "_locales/ja/bitsFunction-strings.json"
     ],
     "testFiles": [
         "test.ts"
