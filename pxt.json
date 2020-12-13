@@ -9,7 +9,6 @@
         "README.md",
         "bitsFunction.ts",
         "_locales/ja/bitsFunction-strings.json",
-        "_locales/jp/bitsFunction-string.json",
         "_locales/jp/bitsFunction-strings.json"
     ],
     "testFiles": [
