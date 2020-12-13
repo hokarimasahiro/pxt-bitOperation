@@ -9,8 +9,7 @@
     },
     "files": [
         "README.md",
-        "main.blocks",
-        "main.ts"
+        "bitsFunction.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -19,5 +18,5 @@
     "supportedTargets": [
         "microbit"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
