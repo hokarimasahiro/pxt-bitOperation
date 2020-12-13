@@ -16,7 +16,7 @@ namespace bitsFunction {
      * Convert hexadecimal string to number
      * @param s hexadecimal strings, eg: 1f
      */
-    //% block="hexToNumver %s"
+    //% blockId=hex2number block="hexToNumver %s"
     export function hex2number(s: string): number {
         let r = 0
         for (let i = 0; i < s.length; i++) {
