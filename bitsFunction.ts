@@ -1,4 +1,4 @@
-//% weight=100 color=#0fbc11 icon="" block="bitsFunction"
+//% weight=100 color=#0fbc11 icon="\u265f" block="bitsFunction"
 namespace bitsFunction {
     export enum func{
         //% block=xor
