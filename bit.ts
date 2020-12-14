@@ -14,9 +14,9 @@ namespace bit {
     }
     /**
      * Convert hexadecimal string to number
-     * @param s hexadecimal strings, eg: 1f
+     * @param s hexadecimal strings, eg: 1ae3c
      */
-    //% blockId=hex2number block="hexToNumver %s"
+    //% block="hexToNumver %s"
     export function hex2number(s: string): number {
         let r = 0
         for (let i = 0; i < s.length; i++) {
@@ -31,7 +31,7 @@ namespace bit {
     }
     /**
      * Logical value of the bit at the specified position
-     * @param n number, eg: 0x0010
+     * @param n number, eg: 0x0abc
      * @param b bit position, eg: 2
      */
     //% block="%n at position %b"
@@ -43,7 +43,7 @@ namespace bit {
     }
     /**
      * value of the bit at the specified position
-     * @param n number, eg: 0x0010
+     * @param n number, eg: 0x0abc
      * @param b bit position, eg: 2
      */
     //% block="%n at position %b"
@@ -65,7 +65,7 @@ namespace bit {
     /**
      * bit or
      * @param a number, eg: 0x3221
-     * @param b number, eg: 0xff33
+     * @param b number, eg: 0x0022
      */
     //% block="%a or %b"
     export function or(a: number, b: number): number {
@@ -74,7 +74,7 @@ namespace bit {
     /**
      * bit exclusive or
      * @param a number, eg: 0x3221
-     * @param b number, eg: 0xff33
+     * @param b number, eg: 0xffff
      */
     //% block="%a xor %b"
     export function xor(a: number, b: number): number {
@@ -101,7 +101,7 @@ namespace bit {
     /**
      * bit Operation
      * @param a number, eg: 0x3221
-     * @param b number, eg: 0xff33
+     * @param b number, eg: 0x0002
      */
     //% block="%a %func %b"
     export function Operation(a: number,Func: func, b: number): number {
