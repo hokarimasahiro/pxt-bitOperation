@@ -54,7 +54,7 @@ namespace bit {
             return 0;
     }
     /**
-     * bits and
+     * bit and
      * @param a number, eg: 0x3221
      * @param b number, eg: 0xff33
      */
@@ -63,7 +63,7 @@ namespace bit {
         return a & b
     }
     /**
-     * bits or
+     * bit or
      * @param a number, eg: 0x3221
      * @param b number, eg: 0xff33
      */
@@ -72,21 +72,13 @@ namespace bit {
         return a | b
     }
     /**
-     * bits exclusive or
+     * bit exclusive or
      * @param a number, eg: 0x3221
      * @param b number, eg: 0xff33
      */
     //% block="%a xor %b"
     export function xor(a: number, b: number): number {
         return a ^ b
-    }
-    /**
-     * invert bits
-     * @param a number, eg: 0x3221
-     */
-    //% block="invert %a"
-    export function invert(a: number): number {
-        return ~a;
     }
     /**
      * shift left
@@ -107,7 +99,7 @@ namespace bit {
         return a >>> b
     }
     /**
-     * logical function
+     * bit Operation
      * @param a number, eg: 0x3221
      * @param b number, eg: 0xff33
      */
