@@ -7,8 +7,8 @@
     },
     "files": [
         "README.md",
-        "bitsFunction.ts",
-        "_locales/ja/bitsFunction-strings.json"
+        "_locales/ja/bit-strings.json",
+        "bit.ts"
     ],
     "testFiles": [
         "test.ts"
