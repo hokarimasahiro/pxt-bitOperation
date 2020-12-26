@@ -1,4 +1,4 @@
-//% color=#0fbc11 icon="\u265f" block="bit Operation"
+//% weight=100 color=#0fbc11 icon="\u265f" block="bit Operation"
 namespace bit {
     export enum func{
         //% block=xor
@@ -14,28 +14,58 @@ namespace bit {
     }
     /**
      * Convert hexadecimal string to number
-     * @param s hexadecimal strings, eg: 1ae3c
+     * @param n number, eg: 0x35fa
+     */
+    //% block="numberToBit %s"
+    export function numberToBit(n: number): string {
+        let hex="0123456789abcdef";
+        let s = "";
+        for (let i = 0; i < 16; i++) {
+            s = hex.substr(n & 0x1,1) + s;
+            n = n >> 1
+        }
+        return s;
+    }
+    /**
+     * Convert hexadecimal string to number
+     * @param n number, eg: 0x35fa
+     */
+    //% block="numberToHex %s"
+    export function numberToHex(n: number): string {
+        let hex="0123456789abcdef";
+        let s = "";
+        for (let i = 0; i < 4; i++) {
+            s = hex.substr(n & 0xf,1) + s;
+            n = n >> 4
+        }
+        return s;
+    }
+    /**
+     * Convert hexadecimal string to number
+     * @param s hexadecimal strings, eg: 1f
      */
     //% block="hexToNumver %s"
-    export function hex2number(s: string): number {
-        let r = 0
+    export function hexToNumber(s: string): number {
+        let hex="0123456789abcdef";
+        let HEX="0123456789ABCDEF";
+        let r = 0;
         for (let i = 0; i < s.length; i++) {
-            if (s.charCodeAt(i) <= 0x39)
-                r = (r << 4) + s.charCodeAt(i) - 0x30
-            else if (s.charCodeAt(i) <= 0x46)
-                r = (r << 4) + s.charCodeAt(i) - 0x41 + 10
+            if(hex.indexOf(s.charAt(i))!=-1)
+                r = (r << 4) + hex.indexOf(s.charAt(i))
+            else if (HEX.indexOf(s.charAt(i))!=-1)
+                r = (r << 4) + HEX.indexOf(s.charAt(i))
             else
-                r = (r << 4) + s.charCodeAt(i) - 0x61 + 10
+                r = (r << 4)
         }
         return r
     }
     /**
      * Logical value of the bit at the specified position
-     * @param n number, eg: 0x0abc
+     * @param n number, eg: 0x0010
      * @param b bit position, eg: 2
      */
     //% block="%n at position %b"
-    export function bittest(n: number, b: number): boolean {
+    export function bitTest(n: number, b: number): boolean {
         if ((n & 1 << b) != 0)
             return true
         else
@@ -43,11 +73,11 @@ namespace bit {
     }
     /**
      * value of the bit at the specified position
-     * @param n number, eg: 0x0abc
+     * @param n number, eg: 0x0010
      * @param b bit position, eg: 2
      */
     //% block="%n at position %b"
-    export function bittestN(n: number, b: number): number {
+    export function bitTestN(n: number, b: number): number {
         if ((n & 1 << b) != 0)
             return 1;
         else
@@ -65,7 +95,7 @@ namespace bit {
     /**
      * bit or
      * @param a number, eg: 0x3221
-     * @param b number, eg: 0x0022
+     * @param b number, eg: 0xff33
      */
     //% block="%a or %b"
     export function or(a: number, b: number): number {
@@ -74,7 +104,7 @@ namespace bit {
     /**
      * bit exclusive or
      * @param a number, eg: 0x3221
-     * @param b number, eg: 0xffff
+     * @param b number, eg: 0xff33
      */
     //% block="%a xor %b"
     export function xor(a: number, b: number): number {
@@ -101,7 +131,7 @@ namespace bit {
     /**
      * bit Operation
      * @param a number, eg: 0x3221
-     * @param b number, eg: 0x0002
+     * @param b number, eg: 0xff33
      */
     //% block="%a %func %b"
     export function Operation(a: number,Func: func, b: number): number {
