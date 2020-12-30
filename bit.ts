@@ -20,7 +20,7 @@ namespace bit {
     export function numberToBit(n: number): string {
         let hex="0123456789abcdef";
         let s = "";
-        for (let i = 0; i < 16; i++) {
+        for (let i = 0; i < 32; i++) {
             s = hex.substr(n & 0x1,1) + s;
             n = n >> 1
         }
@@ -34,7 +34,7 @@ namespace bit {
     export function numberToHex(n: number): string {
         let hex="0123456789abcdef";
         let s = "";
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 8; i++) {
             s = hex.substr(n & 0xf,1) + s;
             n = n >> 4
         }
