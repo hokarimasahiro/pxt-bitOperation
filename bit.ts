@@ -60,30 +60,6 @@ namespace bit {
         return r
     }
     /**
-     * Logical value of the bit at the specified position
-     * @param n number, eg: 0x0010
-     * @param b bit position, eg: 2
-     */
-    //% block="%n at position %b"
-    export function bitTest(n: number, b: number): boolean {
-        if ((n & 1 << b) != 0)
-            return true
-        else
-            return false
-    }
-    /**
-     * value of the bit at the specified position
-     * @param n number, eg: 0x0010
-     * @param b bit position, eg: 2
-     */
-    //% block="%n at position %b"
-    export function bitTestN(n: number, b: number): number {
-        if ((n & 1 << b) != 0)
-            return 1;
-        else
-            return 0;
-    }
-    /**
      * bit and
      * @param a number, eg: 0x3221
      * @param b number, eg: 0xff33
