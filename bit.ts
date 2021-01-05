@@ -13,7 +13,7 @@ namespace bit {
         shiftRight=5
     }
     /**
-     * Convert hexadecimal string to number
+     * Convert number to binary string
      * @param n number, eg: 0x35fa
      */
     //% block="numberToBit %s"
@@ -27,7 +27,7 @@ namespace bit {
         return s;
     }
     /**
-     * Convert hexadecimal string to number
+     * Convert number to hexadecimal string
      * @param n number, eg: 0x35fa
      */
     //% block="numberToHex %s"
@@ -56,6 +56,22 @@ namespace bit {
                 r = (r << 4) + HEX.indexOf(s.charAt(i))
             else
                 r = (r << 4)
+        }
+        return r
+    }
+    /**
+     * Convert decimal string to number
+     * @param s decimal strings, eg: 123
+     */
+    //% block="strToNumver %s"
+    export function strToNumber(s: string): number {
+        let hex="0123456789";
+        let r = 0;
+        for (let i = 0; i < s.length; i++) {
+            if(hex.indexOf(s.charAt(i))!=-1)
+                r = (r * 10) + hex.indexOf(s.charAt(i))
+            else
+                r = (r * 10)
         }
         return r
     }
