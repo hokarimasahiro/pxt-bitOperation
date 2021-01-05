@@ -121,6 +121,16 @@ namespace bit {
         return a >>> b
     }
     /**
+     * test bit
+     * @param a number, eg: 0x3221
+     * @param bit position, eg: 2
+     */
+    //% block="bittest %a at %b"
+    export function bitTest(a: number, b: number): boolean {
+        if ((a & (1 << b)) != 0) return true;
+        else return false;
+    }
+    /**
      * bit Operation
      * @param a number, eg: 0x3221
      * @param b number, eg: 0xff33
