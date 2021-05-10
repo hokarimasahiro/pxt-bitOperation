@@ -60,6 +60,21 @@ namespace bit {
         return r
     }
     /**
+     * Convert binary string to number
+     * @param s binary strings, eg: 1001
+     */
+    //% block="binToNumver %s"
+    export function binToNumber(s: string): number {
+        let r = 0;
+        for (let i = 0; i < s.length; i++) {
+            if(s.charAt(i)=="1")
+                r = (r << 1) + 1
+            else
+                r = (r << 1)
+        }
+        return r
+    }
+    /**
      * Convert decimal string to number
      * @param s decimal strings, eg: 123
      */
@@ -127,8 +142,16 @@ namespace bit {
      */
     //% block="bittest %a at %b"
     export function bitTest(a: number, b: number): boolean {
-        if ((a & (1 << b)) != 0) return true;
-        else return false;
+        return (bitTestN(a, b) == 0x01);
+    }
+    /**
+     * test bit return number
+     * @param a number, eg: 0x3221
+     * @param bit position, eg: 2
+     */
+    //% block="bittestN %a at %b"
+    export function bitTestN(a: number, b: number): number {
+        return((a >> b) & 0x01);
     }
     /**
      * bit Operation
