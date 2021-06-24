@@ -17,7 +17,7 @@ namespace bit {
      * @param n number, eg: 0x35fa
      * @param len length, eg: 8
      */
-    //% block="numberToBit %s"
+    //% block="numberToBit %n length%len"
     export function numberToBit(n: number,len=8): string {
         let hex="0123456789abcdef";
         let s = "";
@@ -32,7 +32,7 @@ namespace bit {
      * @param n number, eg: 0x35fa
      * @param len length, eg: 2
      */
-    //% block="numberToHex %s"
+    //% block="numberToHex %n length%len"
     export function numberToHex(n: number,len=2): string {
         let hex="0123456789abcdef";
         let s = "";
