@@ -15,12 +15,13 @@ namespace bit {
     /**
      * Convert number to binary string
      * @param n number, eg: 0x35fa
+     * @param len length, eg: 8
      */
     //% block="numberToBit %s"
-    export function numberToBit(n: number): string {
+    export function numberToBit(n: number,len=8): string {
         let hex="0123456789abcdef";
         let s = "";
-        for (let i = 0; i < 32; i++) {
+        for (let i = 0; i < len; i++) {
             s = hex.substr(n & 0x1,1) + s;
             n = n >> 1
         }
@@ -29,9 +30,10 @@ namespace bit {
     /**
      * Convert number to hexadecimal string
      * @param n number, eg: 0x35fa
+     * @param len length, eg: 2
      */
     //% block="numberToHex %s"
-    export function numberToHex(n: number): string {
+    export function numberToHex(n: number,len=2): string {
         let hex="0123456789abcdef";
         let s = "";
         for (let i = 0; i < 8; i++) {
