@@ -36,7 +36,7 @@ namespace bit {
     export function numberToHex(n: number,len=2): string {
         let hex="0123456789abcdef";
         let s = "";
-        for (let i = 0; i < 8; i++) {
+        for (let i = 0; i < len; i++) {
             s = hex.substr(n & 0xf,1) + s;
             n = n >> 4
         }
